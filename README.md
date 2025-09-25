@@ -53,6 +53,8 @@ The document analysis tools require a Llama AI API key:
 #### Analysis Tools
 - **`generate_visualizations.py`** - Python script for creating data visualizations
 - **`analyze_docs_simple.py`** - AI-powered document analysis using Llama API
+- **`analyze_marketing_docs.py`** - Comprehensive PDF analysis with image extraction
+- **`analyze_powerpoint.py`** - Multimodal PowerPoint analysis (PPTX → PDF → PNG conversion)
 
 #### Source Materials
 - **`sources/`** - External marketing materials and industry reports
