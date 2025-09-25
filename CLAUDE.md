@@ -4,7 +4,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a Ford Motor Company marketing analysis repository for DSCI-5330 Assignment 03, focusing on strategic marketing intelligence and analysis of Ford's "Ready, Set, Ford" campaign launched in September 2025.
+This is a Ford Motor Company marketing intelligence analysis repository for DSCI-5330 Assignment 03. The project analyzes Ford's marketing transformation (2015-2025) with focus on the "Ready, Set, Ford" campaign launched in September 2025, integrating marketing intelligence frameworks with business intelligence systems analysis.
+
+## Key Commands and Tools
+
+### Document Analysis Pipeline
+```bash
+# Extract and analyze marketing concepts from class PDFs
+python3 analyze_docs_simple.py
+
+# Alternative comprehensive analysis (requires PyMuPDF)
+python3 analyze_marketing_docs.py
+
+# Text extraction from PDFs (if needed manually)
+pdftotext "path/to/file.pdf" -
+```
+
+### Llama AI Integration
+The analysis tools use Llama AI for multimodal document analysis:
+- API endpoint: https://api.llama.com/compat/v1/
+- Model: Llama-4-Maverick-17B-128E-Instruct-FP8
+- Purpose: Extract marketing concepts and frameworks from visual/text content
 
 ## Repository Structure
 
@@ -94,16 +114,67 @@ Cross-reference campaign materials with:
 - Transformation progress (McKinsey)
 - Financial performance indicators
 
+## Project Architecture
+
+### Analysis Workflow
+The repository follows a systematic approach:
+1. **Document Collection**: Historical financial data (10k/, Annual Report/) + current marketing materials (sources/)
+2. **Concept Extraction**: AI-powered analysis of class materials to identify marketing frameworks
+3. **Data Synthesis**: Integration of financial metrics with marketing intelligence concepts
+4. **Report Generation**: Professional memorandum with data tables and strategic recommendations
+
+### Key Deliverables Structure
+- `PROJECT_EXECUTION_PLAN.md`: Strategic framework and methodology
+- `marketing_concepts.md`: Extracted marketing intelligence concepts from class materials
+- `marketing_data_tables.md`: Comprehensive financial and performance metrics
+- `MEMORANDUM_OUTLINE.md`: Professional analysis integrating all elements
+- `works_cited.md`: Complete bibliography with 50+ academic and industry sources
+
+### Marketing Intelligence Framework Integration
+The analysis applies academic concepts throughout:
+- **STP Framework**: Segmentation, Targeting, Positioning analysis
+- **Consumer Decision-Making Process**: Pre-purchase, purchase, post-purchase evaluation
+- **Marketing Mix Evolution**: 4Ps to 7Ps application
+- **Business Intelligence Systems**: Data-driven marketing optimization
+- **Co-creation and Conscience Marketing**: Modern engagement strategies
+
 ## Data Extraction Considerations
 
-### When Processing Documents
-- Preserve exact financial figures and dates
-- Maintain context for strategic quotes
-- Track source attribution for all claims
-- Note visual elements that may require description
+### Financial Data Processing
+- Extract marketing spend trends from 10-K reports (2015-2024)
+- Correlate marketing investment with revenue/profit performance
+- Calculate ROI metrics and efficiency ratios
+- Track segment performance (trucks, SUVs, cars, EVs)
 
-### Cross-Document Analysis
-- Link marketing initiatives to financial outcomes
-- Connect strategic themes across time periods
-- Identify consistency/changes in messaging
-- Map stakeholder communications patterns
+### Marketing Campaign Analysis
+- Quantify "Ready, Set, Ford" campaign impact (Q3 2025)
+- Compare Ford's approach vs GM/Stellantis/Toyota
+- Measure brand loyalty metrics and customer satisfaction scores
+- Analyze digital vs traditional marketing mix evolution
+
+### Business Intelligence Applications
+- Customer Data Platform implementation and ROI
+- Predictive analytics for demand forecasting
+- Real-time dashboard optimization results
+- Connected vehicle data utilization for marketing
+
+## Critical Success Factors
+
+### Data Integration Approach
+The analysis demonstrates Ford's marketing transformation through:
+- **Quantitative Rigor**: 10 comprehensive data tables with historical trends (2015-2024)
+- **Academic Integration**: Marketing intelligence concepts woven throughout analysis
+- **Strategic Insight**: Linking marketing investments to financial performance
+- **Forward-Looking**: BI-driven recommendations for competitive advantage
+
+### Key Metrics Tracked
+- Marketing ROI improvement from 0.32 (2019) to 2.11 (2024)
+- Truck loyalty leadership at 65.1% vs industry average 52.7%
+- Marketing efficiency optimization from 1.65% to 1.51% of revenue
+- "Ready, Set, Ford" campaign driving +35% digital engagement
+
+### Analytical Rigor Standards
+- All financial data sourced from SEC filings and verified reports
+- Marketing claims supported by industry research (J.D. Power, McKinsey)
+- Competitive analysis includes GM, Stellantis, Toyota benchmarking
+- Business intelligence impact quantified with specific ROI measurements
