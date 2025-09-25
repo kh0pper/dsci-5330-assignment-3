@@ -4,27 +4,55 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a Ford Motor Company marketing intelligence analysis repository for DSCI-5330 Assignment 03. The project analyzes Ford's marketing transformation (2015-2025) with focus on the "Ready, Set, Ford" campaign launched in September 2025, integrating marketing intelligence frameworks with business intelligence systems analysis.
+Ford Motor Company marketing intelligence analysis for DSCI-5330 Assignment 03. Analyzes Ford's marketing transformation (2015-2025) focusing on the "Ready, Set, Ford" campaign, integrating academic marketing frameworks with business intelligence systems.
 
-## Key Commands and Tools
+## Key Commands
+
+### Visualization Generation
+```bash
+# Generate all marketing data visualizations (requires matplotlib, pandas, seaborn, numpy)
+python3 generate_visualizations.py
+
+# Install dependencies if needed
+python3 -m pip install --user --break-system-packages matplotlib pandas seaborn numpy
+```
 
 ### Document Analysis Pipeline
 ```bash
-# Extract and analyze marketing concepts from class PDFs
+# Analyze marketing concepts from class PDFs using Llama AI
 python3 analyze_docs_simple.py
 
-# Alternative comprehensive analysis (requires PyMuPDF)
+# Alternative with image extraction (requires PyMuPDF)
 python3 analyze_marketing_docs.py
 
-# Text extraction from PDFs (if needed manually)
+# Manual PDF text extraction
 pdftotext "path/to/file.pdf" -
 ```
 
-### Llama AI Integration
-The analysis tools use Llama AI for multimodal document analysis:
-- API endpoint: https://api.llama.com/compat/v1/
+## Technical Architecture
+
+### Python Analysis Tools
+
+**`generate_visualizations.py`** - Creates 6 data visualizations:
+- Marketing ROI trends with 3-panel analysis
+- Vehicle segment performance dashboard (4 metrics)
+- Competitive analysis comparison (Ford vs GM, Stellantis, Toyota)
+- Campaign performance metrics with targets
+- Business intelligence ROI impact visualization
+- Digital marketing transformation timeline
+
+**`analyze_docs_simple.py`** - Llama AI document analyzer:
+- Uses OpenAI client library with Llama endpoint
 - Model: Llama-4-Maverick-17B-128E-Instruct-FP8
-- Purpose: Extract marketing concepts and frameworks from visual/text content
+- Extracts marketing concepts from class PDFs
+- Outputs to `marketing_concepts.md`
+
+### Data Flow Architecture
+```
+Source Documents → AI Analysis → Data Tables → Visualizations → Memorandum
+       ↓               ↓              ↓              ↓              ↓
+   (PDFs/10Ks)   (Llama API)    (10 tables)   (6 charts)    (15+ pages)
+```
 
 ## Repository Structure
 
@@ -114,29 +142,27 @@ Cross-reference campaign materials with:
 - Transformation progress (McKinsey)
 - Financial performance indicators
 
-## Project Architecture
+## Core Deliverables and Dependencies
 
-### Analysis Workflow
-The repository follows a systematic approach:
-1. **Document Collection**: Historical financial data (10k/, Annual Report/) + current marketing materials (sources/)
-2. **Concept Extraction**: AI-powered analysis of class materials to identify marketing frameworks
-3. **Data Synthesis**: Integration of financial metrics with marketing intelligence concepts
-4. **Report Generation**: Professional memorandum with data tables and strategic recommendations
+### Primary Analysis Documents
+- `Ford_Marketing_Intelligence_Memorandum.md` - Final 15+ page memorandum
+- `MEMORANDUM_OUTLINE.md` - Structured outline (source for final memo)
+- `marketing_data_tables.md` - 10 data tables (feeds visualizations)
+- `PROJECT_EXECUTION_PLAN.md` - Methodology and framework
 
-### Key Deliverables Structure
-- `PROJECT_EXECUTION_PLAN.md`: Strategic framework and methodology
-- `marketing_concepts.md`: Extracted marketing intelligence concepts from class materials
-- `marketing_data_tables.md`: Comprehensive financial and performance metrics
-- `MEMORANDUM_OUTLINE.md`: Professional analysis integrating all elements
-- `works_cited.md`: Complete bibliography with 50+ academic and industry sources
+### Data Processing Chain
+```
+marketing_data_tables.md → generate_visualizations.py → visualizations/*.png
+                        ↘                             ↗
+                          Ford_Marketing_Intelligence_Memorandum.md
+```
 
-### Marketing Intelligence Framework Integration
-The analysis applies academic concepts throughout:
-- **STP Framework**: Segmentation, Targeting, Positioning analysis
-- **Consumer Decision-Making Process**: Pre-purchase, purchase, post-purchase evaluation
-- **Marketing Mix Evolution**: 4Ps to 7Ps application
-- **Business Intelligence Systems**: Data-driven marketing optimization
-- **Co-creation and Conscience Marketing**: Modern engagement strategies
+### Marketing Intelligence Frameworks Applied
+- **STP Analysis**: Ford's three-segment strategy (Blue/Model e/Pro)
+- **Consumer Decision-Making**: Cognitive vs emotional appeals in "Ready, Set, Ford"
+- **7Ps Framework**: Product→Lifestyle, Price→Value, Place→Omnichannel
+- **BI Integration**: CDP→22% conversion lift, Predictive→-18% inventory costs
+- **Co-creation**: FordPass 3.5M users, 68% engagement rate
 
 ## Data Extraction Considerations
 
@@ -158,23 +184,24 @@ The analysis applies academic concepts throughout:
 - Real-time dashboard optimization results
 - Connected vehicle data utilization for marketing
 
-## Critical Success Factors
+## Key Performance Metrics
 
-### Data Integration Approach
-The analysis demonstrates Ford's marketing transformation through:
-- **Quantitative Rigor**: 10 comprehensive data tables with historical trends (2015-2024)
-- **Academic Integration**: Marketing intelligence concepts woven throughout analysis
-- **Strategic Insight**: Linking marketing investments to financial performance
-- **Forward-Looking**: BI-driven recommendations for competitive advantage
+### Marketing Transformation Results (2019-2024)
+- ROI: 0.32 → 2.11 (560% improvement)
+- Efficiency: 1.65% → 1.51% of revenue
+- Digital Mix: 40% → 65%
+- Truck Loyalty: 65.1% (vs 52.7% industry)
 
-### Key Metrics Tracked
-- Marketing ROI improvement from 0.32 (2019) to 2.11 (2024)
-- Truck loyalty leadership at 65.1% vs industry average 52.7%
-- Marketing efficiency optimization from 1.65% to 1.51% of revenue
-- "Ready, Set, Ford" campaign driving +35% digital engagement
+### Business Intelligence ROI Impact
+- Customer Data Platform: +22% conversion
+- Predictive Analytics: -18% inventory costs
+- Real-time Dashboards: +31% ROI optimization
+- Connected Vehicle Data: +45% targeting success
+- Total Cumulative Impact: +82% improvement
 
-### Analytical Rigor Standards
-- All financial data sourced from SEC filings and verified reports
-- Marketing claims supported by industry research (J.D. Power, McKinsey)
-- Competitive analysis includes GM, Stellantis, Toyota benchmarking
-- Business intelligence impact quantified with specific ROI measurements
+### Competitive Positioning (2024)
+| Metric | Ford | GM | Stellantis | Toyota |
+|--------|------|-----|------------|--------|
+| Marketing Spend | $2.8B | $3.3B | $1.9B | $3.8B |
+| % of Revenue | 1.51% | 1.90% | 2.10% | 1.45% |
+| Brand Loyalty | 52.8% | 49.1% | 45.3% | 61.2% |

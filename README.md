@@ -13,6 +13,21 @@ This repository contains a comprehensive marketing intelligence analysis of Ford
 - **Digital Transformation**: Successfully shifted to 65% digital marketing mix vs 35% traditional
 - **Campaign Success**: "Ready, Set, Ford" drove +35% digital engagement within first quarter
 
+### Setup Instructions
+
+#### API Configuration
+The document analysis tools require a Llama AI API key:
+
+1. Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+2. Edit `.env` and add your Llama API key:
+   ```
+   LLAMA_API_KEY=your_actual_api_key_here
+   ```
+3. Never commit `.env` to version control
+
 ### Repository Structure
 
 #### Core Deliverables

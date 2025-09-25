@@ -9,8 +9,13 @@ from pathlib import Path
 from openai import OpenAI
 
 # Initialize Llama API client
+# API key should be set as environment variable: LLAMA_API_KEY
+api_key = os.environ.get("LLAMA_API_KEY")
+if not api_key:
+    raise ValueError("LLAMA_API_KEY environment variable is not set. Please set it before running this script.")
+
 client = OpenAI(
-    api_key="LLM|818593017173620|g1BK79Kjo-FGMGEuwGSDW4FwiGA",
+    api_key=api_key,
     base_url="https://api.llama.com/compat/v1/",
 )
 
